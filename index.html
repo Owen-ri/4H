@@ -204,8 +204,19 @@
 
         </div>
     </div>
-
-    <div class="container2">
+    <button onclick="toggleDivs()">Mostrar/Ocultar Divs</button>
+    <div class="container">
+        <div class="div-box hidden" id="contenido">
+            <embed src="../assets/pdf/Back4app.pdf" type="application/pdf" class="pdf-container">
+            <button id="hideButton" style="display: none;">Ocultar contenido</button>
+        </div>
+        <div class="card">
+        <a id="showButton">
+                <h3>Back4app</h3>
+                <p>Anel Gutiérrez</p>
+                <img src="assets/img/back4app.png" alt="https://main--jocajisweb.netlify.app/assets/img/back4app.png" />
+        </a>
+    </div>
 
     <div class="overlay" id="contenido">
         <embed src="../pdf" type="application/pdf" class="pdf-container">
