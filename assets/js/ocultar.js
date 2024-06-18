@@ -1,17 +1,22 @@
-document.getElementById('showButton').addEventListener('click', function() {
-    var contenido = document.getElementById('contenido');
-    var showButton = document.getElementById('showButton');
-    var hideButton = document.getElementById('hideButton');
-    contenido.style.display = 'block';
-    showButton.style.display = 'none';
-    hideButton.style.display = 'inline';
-});
+function togglePDF(pdfId) {
+    var overlay = document.getElementById('overlay');
+    var pdfContainer = document.getElementById(pdfId);
 
-document.getElementById('hideButton').addEventListener('click', function() {
-    var contenido = document.getElementById('contenido');
-    var showButton = document.getElementById('showButton');
-    var hideButton = document.getElementById('hideButton');
-    contenido.style.display = 'none';
-    showButton.style.display = 'inline';
-    hideButton.style.display = 'none';
+    if (pdfContainer.style.display === 'none' || pdfContainer.style.display === '') {
+        overlay.style.display = 'block';
+        pdfContainer.style.display = 'block';
+    } else {
+        overlay.style.display = 'none';
+        pdfContainer.style.display = 'none';
+    }
+}
+
+document.getElementById('overlay').addEventListener('click', function() {
+    var overlay = document.getElementById('overlay');
+    var pdfContainers = document.querySelectorAll('.pdf-container');
+
+    overlay.style.display = 'none';
+    pdfContainers.forEach(function(container) {
+        container.style.display = 'none';
+    });
 });
